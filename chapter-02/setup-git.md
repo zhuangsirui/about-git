@@ -1,4 +1,5 @@
 # Git的安装
+
 ## Ubuntu
 Ubuntu的apt-get早已经包含git的deb文件，你可以运行`sudo apt-get install git`直接安装默认配置，或者运行`apt-cache search git`来查看关于Git的所有程序选择安装。
 
