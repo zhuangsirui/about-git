@@ -138,8 +138,33 @@ $ git commit -a -m 'Fast commit'
  2 files changed, 2 insertions(+)
 ```
 
-事实上，我的每次提交都会用到`-a`，`git add`只是在我确认需要添加新的文件是才会用。这样可以最大限度的防止我们在毫无准备的情况下添加了一些莫名其妙的文件。
+事实上，我几乎每次提交都会用到`-a`，`git add`只是在我确认需要添加新的文件是才会用。这样可以最大限度的防止我们在毫无准备的情况下添加了一些莫名其妙的文件。
 
 ### 从Git仓库中删除文件
+想要从Git仓库中删除某个文件，以保证Git不再会跟踪它的话，需要使用`git rm`命令。  
+下面我们尝试一下使用`git rm`将*try.txt*从Git跟踪列表中删除。
+```bash
+$ git rm try.txt
+rm 'try.txt'
+$ git commit -m 'delete file try.txt'
+[master 7d986ae] delete file try.txt
+ 1 file changed, 2 deletions(-)
+ delete mode 100644 try.txt
+```
 
 ### 移动文件
+移动文件的命令也和删除文件类似：
+```bash
+$ git mv test.rb test.new.rb
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	renamed:    test.rb -> test.new.rb
+#
+$ git commit -m 'move file test.rb to test.new.rb'
+[master 9b58691] move file test.rb to test.new.rb
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename test.rb => test.new.rb (100%)
+```
