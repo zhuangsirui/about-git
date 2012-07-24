@@ -5,12 +5,12 @@
 为了更好的学习Git，有必要亲自试一试Git的操作。现在让我们新建一个空的目录来使用Git控制一些东西。  
 首先新建一个空白的目录，名字可以取自己喜欢的，我在这里取名叫*learn-git*。创建成功之后进入它。
 ```bash
-mkdir ~/learn-git && cd ~/learn-git
+$ mkdir ~/learn-git && cd ~/learn-git
 ```
 
 进入目录之后，我们首先需要告诉Git，这里归你管了，俗称初始化Git仓库。命令很简单：
 ```bash
-git init
+$ git init
 ```
 
 在这之后，现在所在的目录就是一个Git的工作树了。
@@ -20,8 +20,8 @@ git init
 ## 提交之前的一些准备
 如果你是第一次使用Git，那么会被要求填入你名称以及电子邮箱地址。Git会禁止掉所有的匿名提交。所以首先向Git自我介绍一番：
 ```bash
-git config --global user.name 'your username'
-git config --global user.email 'name@example.com'
+$ git config --global user.name 'your username'
+$ git config --global user.email 'name@example.com'
 ```
 
 ## 首次提交
@@ -32,7 +32,7 @@ touch test.rb try.txt
 
 接着我们来看看Git现在是如何看待这两个新文件的。
 ```bash
-git status
+$ git status
 # On branch master
 #
 # Initial commit
@@ -47,11 +47,11 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 我们看到，他将这两个文件归类在*Untracked files*中。意思就是Git没有跟踪这两个文件的任何更改行为，包括删除。如果我们想让Git跟踪这个文件，我们就需要运行`add`命令，将文件添加到Git的跟踪清单中。现在我们先将*test.rb*添加到Git的控制之中。
 ```bash
-git add test.rb
+$ git add test.rb
 ```
 接下来我们在此运行`git status`来查看当前状态：
 ```bash
-git status
+$ git status
 # On branch master
 #
 # Initial commit
@@ -69,8 +69,8 @@ git status
 
 现在可以看出，我们刚刚添加的*test.rb*已经在Git暂存区了，但是*try.txt*任然在未跟踪列表中。我们当然可以接着运行`git add try.txt`来将它添加到暂存区，但是如果文件过多的话，我们一定不希望把文件挨个添加到git控制列表中吧。所以当文件过多，可以直接使用`git add .`来添加所有文件到Git的跟踪清单里。如果有不想添加的文件，可以写一个`.gitignore`文件到根目录，具体的语法格式会放在后面的章节讲解。
 ```bash
-git add .
-git status
+$ git add .
+$ git status
 # On branch master
 #
 # Initial commit
@@ -85,7 +85,7 @@ git status
 
 现在，我们想让Git控制的文件都放到暂存区了。之后我们输入`git commit`命令就可以将暂存区的文件正式提交到Git仓库中，并且生成一个快照。
 ```bash
-git commit
+$ git commit
 [master (root-commit) 73c519b] My first commit
  0 files changed
  create mode 100644 test.rb
@@ -97,7 +97,7 @@ git commit
 ## 查看提交Log
 当你在提交之后，刚才在暂存区的文件已经不复存在了，确切的说他们已经不在暂存区了，而是被Git记录了下来。这时运行`git status`应该看到这样的显示：
 ```bash
-git status
+$ git status
 # On branch master
 nothing to commit (working directory clean)
 ```
@@ -113,7 +113,7 @@ Git会告诉你，当前的工作目录的完全干净的。这意味着：
 
 现在让我们查看Git的提交历史
 ```bash
-git log
+$ git log
 commit 73c519b0f86155904957482db266fb4da25835e5
 Author: sirius zhuang <siriusibunny@gmail.com>
 Date:   Thu Jul 19 22:10:03 2012 +0800
