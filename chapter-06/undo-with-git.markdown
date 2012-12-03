@@ -77,3 +77,4 @@ nothing to commit (working directory clean)
 看到了么？用Git，后悔成本如此之低！
 
 ## 提交之后的撤销操作
+相信现在大家已经可以轻松地把提交之前对代码的改动复原到原来的状态了。
