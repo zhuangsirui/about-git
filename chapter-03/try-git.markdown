@@ -3,7 +3,7 @@
 ## 初始化Git仓库
 
 为了更好的学习Git，有必要亲自试一试Git的操作。现在让我们新建一个空的目录来使用Git控制一些东西。  
-首先新建一个空白的目录，名字可以取自己喜欢的，我在这里取名叫*learn-git*。创建成功之后进入它。
+首先新建一个空白的目录，名字可以取自己喜欢的，我在这里取名叫 *learn-git* 。创建成功之后进入它。
 ```bash
 $ mkdir ~/learn-git && cd ~/learn-git
 ```
@@ -25,7 +25,7 @@ $ git config --global user.email 'name@example.com'
 ```
 
 ## 首次提交
-在初始化完成之后，我们就可以开始编写我们的项目了。这里我们模拟创建两个文件，一个是*test.rb*，一个是*try.txt*。
+在初始化完成之后，我们就可以开始编写我们的项目了。这里我们模拟创建两个文件，一个是 *test.rb* ，一个是 *try.txt* 。
 ```bash
 touch test.rb try.txt
 ```
@@ -45,7 +45,7 @@ $ git status
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-我们看到，他将这两个文件归类在*Untracked files*中。意思就是Git没有跟踪这两个文件的任何更改行为，包括删除。如果我们想让Git跟踪这个文件，我们就需要运行`add`命令，将文件添加到Git的跟踪清单中。现在我们先将*test.rb*添加到Git的控制之中。
+我们看到，他将这两个文件归类在 *Untracked files* 中。意思就是Git没有跟踪这两个文件的任何更改行为，包括删除。如果我们想让Git跟踪这个文件，我们就需要运行`add`命令，将文件添加到Git的跟踪清单中。现在我们先将 *test.rb* 添加到Git的控制之中。
 ```bash
 $ git add test.rb
 ```
@@ -67,7 +67,7 @@ $ git status
 #	try.txt
 ```
 
-现在可以看出，我们刚刚添加的*test.rb*已经在Git暂存区了，但是*try.txt*任然在未跟踪列表中。我们当然可以接着运行`git add try.txt`来将它添加到暂存区，但是如果文件过多的话，我们一定不希望把文件挨个添加到git控制列表中吧。所以当文件过多，可以直接使用`git add .`来添加所有文件到Git的跟踪清单里。如果有不想添加的文件，可以写一个`.gitignore`文件到根目录，具体的语法格式会放在后面的章节讲解。
+现在可以看出，我们刚刚添加的 *test.rb* 已经在Git暂存区了，但是 *try.txt* 任然在未跟踪列表中。我们当然可以接着运行`git add try.txt`来将它添加到暂存区，但是如果文件过多的话，我们一定不希望把文件挨个添加到git控制列表中吧。所以当文件过多，可以直接使用`git add .`来添加所有文件到Git的跟踪清单里。如果有不想添加的文件，可以写一个`.gitignore`文件到根目录，具体的语法格式会放在后面的章节讲解。
 ```bash
 $ git add .
 $ git status
